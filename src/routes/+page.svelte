@@ -70,7 +70,7 @@
   $: currentStatus = statusConfig[status as keyof typeof statusConfig];
 </script>
 
-<div class="mx-auto max-w-screen-lg p-8">
+<div class="mx-auto max-w-screen-md p-8">
   <div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 mb-6 shadow-lg text-center">
     <h1 class="text-3xl font-bold text-gray-800 mb-4">JHL-HK's Current Status</h1>
     <div class="font-semibold mb-2 flex justify-center gap-2">
