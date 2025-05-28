@@ -110,7 +110,7 @@
   </div>
 
   <div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 mb-6 shadow-lg text-center">
-    <h2 class="text-2xl font-bold text-gray-800 mb-4">Gaming Status</h2>
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">Status</h2>
     <hr class="my-4 border-gray-300"/>
     <div class="flex justify-center">
       <iframe 
@@ -127,6 +127,11 @@
 
   <div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 mb-6 shadow-lg text-center text-gray-500">
     <p>Last Updated: {time} JST</p>
-    <p class="text-sm">&copy; {year} JHL-HK</p>
+    <p class="text-sm">
+      &copy; {year} JHL-HK. Published under MIT License. 
+      <a href="https://github.com/JHL-HK/status" class="text-blue-500 hover:text-blue-600" target="_blank" rel="noopener noreferrer">
+        GitHub Repo
+      </a>
+    </p>
   </div>
 </div>
