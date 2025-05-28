@@ -1,26 +1,32 @@
-const hour = new Date().toLocaleString().slice(10, 12);
-const minute = new Date().toLocaleString().slice(13,15);
-const second = new Date().toLocaleString().slice(16, 18);
-const ampm = new Date().toLocaleString().slice(19, 21);
-const day = new Date().getDay();
+const now = new Date();
+const hour = now.getHours();
+const minute = now.getMinutes();
+const second = now.getSeconds();
+const day = now.getDay();
 
 export default function getStatus() {
   let status = 0;
-
-  console.log(ampm, hour, minute, second, day);
 
   // -1: Weekend
   // 0: Unknown
   // 1: Sleeping
   // 2: Schools
   // 3: Free
-  if (ampm === 'AM' && hour < '8' || ampm === 'AM' && hour === '12') {
-    status = 1;
-  } else if (day > 5) {
+
+  // Weekend check
+  if (day === 0 || day === 6) {
     status = -1;
-  } else if (hour > '8' && ampm === 'AM' || hour < '8' && ampm === 'PM' || ampm === 'PM' && hour === '12') {
+  }
+  // Sleeping hours (12 AM - 8 AM)
+  else if (hour < 8) {
+    status = 1;
+  }
+  // School hours (8 AM - 8 PM on weekdays)
+  else if (hour >= 8 && hour < 20) {
     status = 2;
-  } else if (hour > '8' && ampm === 'PM') {
+  }
+  // Free time (8 PM - 12 AM)
+  else {
     status = 3;
   }
 
